@@ -10,6 +10,7 @@ window.onload = function () {
       for (const movie of movies) {
 
         const article = document.createElement("article");
+        article.id = movie.imdbID;
 
         // Poster
         const poster = document.createElement("img");
@@ -72,6 +73,10 @@ window.onload = function () {
         // Edit Button
         const editButton = document.createElement("button");
         editButton.textContent = "Edit";
+
+        editButton.onclick = function () {
+          location.href = "edit.html?imdbID=" + movie.imdbID;
+        };
 
         // Build structure
         content.appendChild(title);
